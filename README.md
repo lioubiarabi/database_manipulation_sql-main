@@ -55,7 +55,7 @@ This comprehensive SQL practice activity will allow you to master **Data Definit
     
 6.  **Delete the product** "Agrafeuse"
     
-7.  **Delete invoice** number 2
+7.  **Delete invoice** number 6
     
 
 ### Part 2: Basic SELECT Queries
