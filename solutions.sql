@@ -11,6 +11,7 @@ create table facture (
     DatFact date not null
 );
 
+
 -- 1.
 
 insert into product (RefProd, Design, PrixHT)
@@ -52,3 +53,61 @@ delete from product
 -- 7.
 delete from facture
     where Numfact = 6;
+
+/* Part 2 */
+
+create table est_facture (
+    Numfact int,
+    RefProd int,
+    Qte int not null,
+
+    primary key (Numfact, RefProd),
+    foreign key (Numfact) references facture(Numfact),
+    foreign key (RefProd) references product(RefProd)
+);
+
+-- 8.
+select * from product;
+
+-- 9.
+select * from product
+    where PrixHT > 2.30;
+
+-- 10.
+select * from product
+    where PrixHT between 50 and 5000;
+
+-- 11.
+select * from facture
+    where DatFact < '2020-10-16';
+
+-- 12.
+select Design from product
+    where PrixHT between 500 and 7500;
+
+-- 13.
+select Design from product
+    where PrixHT < 2000;
+
+-- 14.
+select Numfact from facture;
+
+-- 15.
+select Qte from est_facture;
+
+-- 16.
+select sum(PrixHT) from product;
+
+-- 17.
+select * from product
+    order by PrixHT desc;
+
+-- 18.
+select * from product
+    order by PrixHT desc
+    Limit 1;
+
+-- 19.
+select * from product
+    order by PrixHT asc
+    Limit 1;
